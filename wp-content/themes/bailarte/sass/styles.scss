@@ -1,0 +1,209 @@
+@import "compass/reset";
+@import "compass/css3/images";
+@import "fontello";
+
+$defaultBoxSpacing : 15px;
+$contentBg : #f9f9f9;
+$redColor : #720000;
+$redAccentBackground : #f7f3f3;
+$buttonRedTop : #7e0000;
+$buttonRedBottom : #510000;
+
+body {
+	font-family: "Source Sans Pro", sans-serif;
+	background : #222;
+	color : #f1f1f1;
+}
+
+a {
+	color : #fff;
+	text-decoration: none;
+}
+
+#viewport {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+#content {
+	background : $contentBg;
+	color : #333;
+	clear : both;
+	overflow : auto;
+
+	a {
+		color : #000;
+	}
+
+	.entry-preview {
+		button, input[type='submit'] {
+			min-width: 100px;
+			line-height: 35px;
+			height: 38px;
+			display: inline-block;
+			background: #efefef;
+			box-shadow: 0 0 2px 0px #333;
+			border: 1px solid #fff;
+		}
+		input[type='text'], input[type='email'], textarea {
+			width : 300px;
+			padding : 10px 5px;
+			box-shadow : 1px 1px 2px #bbb inset;
+			border : 1px solid #ccc;
+			outline : none;
+		}
+	}
+
+	.wpcf7-not-valid-tip-no-ajax {
+		color : red;
+		display: inline-block;
+		margin-left: 10px;
+		text-shadow: 0 0 1px #f37;
+	}
+}
+
+.imageHolderLandscape {
+	max-width: 100%;
+	min-height: 150px;
+	background: #aaa;
+	box-shadow: 0 0 1px 0 #666;
+	border : 1px solid #333;
+	margin-bottom: $defaultBoxSpacing;
+}
+
+@import "main-navigation";
+
+/*
+ Content holder styles
+ */
+
+.contentHolder {
+	line-height: 20px;
+	font-size: 15px;
+}
+
+#content .innerSection {
+	padding : $defaultBoxSpacing;
+} 
+
+#content article.blog-entry {
+	.meta {
+		margin-bottom: 5px;
+		font-size: 13px;
+	}
+
+	a {
+		color : $redColor;
+	}
+
+	.entry-preview {
+		margin-bottom: 5px;
+		clear : both;
+	}
+
+	.read-more {
+		font-size: 13px;
+		i {
+			width: 10px;
+			display: inline-block;
+			position: relative;
+			// top: 0px;
+			font-size: 10px;
+		}
+	}
+}
+
+h2.sectionTitle {
+	font-size: 24px;
+	margin-bottom: $defaultBoxSpacing;
+	line-height: 28px;
+	color : $redColor;
+	text-shadow: 1px 1px 1px #ddd;
+
+	a {
+		color : $redColor;
+	}
+}
+
+#featuredSections {
+	clear : both;
+	@include background-image(linear-gradient($contentBg,#f3f3f3));
+	overflow: auto;
+	margin-bottom: $defaultBoxSpacing;
+	box-shadow: 0 0 7px 0px rgba(0,0,0,0.2);
+
+	article.blog-entry {
+		float : left;
+		width : 33%;
+		&:nth-child(2) {
+			@include background-image(linear-gradient($contentBg,$redAccentBackground));
+		}
+ 	}
+}
+
+@import 'search-form';
+@import 'slidersection';
+@import 'orar';
+@import 'wp-page-navi';
+
+
+#breadcrumbs {
+	background : $contentBg - 10;
+	padding : 0 15px;
+	box-shadow : 0 -1px 2px #ddd inset;
+	color : #333;
+	line-height : 30px;
+	a {
+		color : $redColor;
+		display: inline-block;
+	}
+}
+
+.widget {
+	margin : 15px;
+}
+
+.anunturi {
+	li {
+		font-size : 16px;
+		line-height: 20px;	
+		a {
+			display: block;
+			padding : 8px;
+			@include background-image(linear-gradient($contentBg,#eee));
+			box-shadow : 0 0 1px #ccc;
+		}
+	}
+}
+
+.wideContent {
+	width : 66%;
+	float : left;
+}
+
+#content [data-layout='blog-list'] .blog-entry {
+	h2.sectionTitle {
+		margin-bottom: 0;
+	}
+	.meta {
+		padding-top : 0;
+	}
+}
+
+#content [data-layout='blog-list'].single-page {
+	width : 100%;
+
+	.blog-entry-heading {
+		float : left;
+	}
+
+	.search-meta {
+		min-width: 310px;
+		float : right;
+	}
+}
+
+.slimContent {
+	width : 34%;
+	float : left;
+}

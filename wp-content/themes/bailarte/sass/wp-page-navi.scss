@@ -1,0 +1,29 @@
+#content .wp-pagenavi {
+	font-size: 13px;
+
+	.pages {
+		border:1px solid #fff;
+		display: inline-block;
+		margin-right: 5px;
+		line-height: 25px;
+		padding: 0 5px;
+		box-shadow: 0 0 1px #888;
+	}
+	
+	a, .current {
+		display: inline-block;
+		min-width : 14px;
+		padding: 0 5px;
+		height : 25px;
+		line-height: 25px;
+		text-align: center;
+	}
+
+	a {
+		@include background-image(linear-gradient($contentBg,#eee));
+		border : 1px solid #fff;
+		box-shadow: 0 0 1px #333;
+		margin: 0 2px;
+		color : $redColor;
+	}
+}
